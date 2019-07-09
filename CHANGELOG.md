@@ -4,4 +4,8 @@
 
 ## [0.0.3] - Add Authors
 
+## [0.0.4] - Add Images
+
+## [0.0.5] - Add Github Link
+
 First release, i hope u enjoy =)
