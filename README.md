@@ -16,12 +16,12 @@ Add to pubspec.yaml.
 ```yaml
 dependencies:
   ...
-  radial_button: ^0.0.1
+  radial_button: ^0.0.5
 ```
 
-<img src="assets/1562709801.png" width="300">
+<img src="https://github.com/Bwolfs2/radial_button/raw/master/assets/1562709801.png" width="300">
 
-<img src="assets/1562709828.png" width="300">
+<img src="https://github.com/Bwolfs2/radial_button/raw/master/assets/1562709828.png" width="300">
 
 
 ## Usage Example

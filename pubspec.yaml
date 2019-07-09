@@ -1,8 +1,15 @@
 name: radial_button
 description: A new Radial Button 
-version: 0.0.2
-author: Bwolf <bwolf@flutterando.com.br>
-homepage: https:www.flutterando.com.br
+version: 0.0.5
+
+authors:
+- Bwolf <bwolf@flutterando.com.br>
+- Deivao <david@flutterando.com.br>
+- Azevedo <azevedo@flutterando.com.br>
+
+git: https://github.com/Bwolfs2/radial_button
+
+homepage: https://flutterando.com.br/
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
