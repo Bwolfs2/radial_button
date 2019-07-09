@@ -13,8 +13,7 @@ mixin CircleButtonAnimation<T extends StatefulWidget>
   Duration get duration;
   Curve get curve;
   @override
-  void initState() {
-    print("Casa: $curve");
+  void initState() {    
     super.initState();
     controller = AnimationController(duration: duration, vsync: this);
     positionAnimation = Tween<Offset>(
