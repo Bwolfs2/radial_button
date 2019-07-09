@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - First Release .
 
-* TODO: Describe initial release.
+## [0.0.2] - Add image and Sample in the README.mb
+
+First release, i hope u enjoy =)

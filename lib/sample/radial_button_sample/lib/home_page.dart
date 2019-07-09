@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child:CircleFloatingButton.completeCircle(
+        child:CircleFloatingButton.semiCircle(
           items: itemsToBody,
           color: Colors.red,
           duration: Duration(milliseconds: 1000),

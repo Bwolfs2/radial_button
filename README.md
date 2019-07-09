@@ -2,13 +2,79 @@
 
 A new Radial Button 
 
-## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Start
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+A Flutter plugin for iOS and Android for generating radial buttons for floating action buttons and other parts.
+
+> Feedback and Pull Requests are most welcome!
+
+## Installation
+
+Add to pubspec.yaml.
+
+```yaml
+dependencies:
+  ...
+  radial_button: ^0.0.1
+```
+
+<img src="assets/1562709801.png" width="300">
+
+<img src="assets/1562709828.png" width="300">
+
+
+## Usage Example
+
+import flutter_signin_button.dart
+
+```dart
+import 'package:radial_button/widget/circle_floating_button.dart';
+```
+
+## Samples
+
+```dart
+    var itemsActionBar = [
+        FloatingActionButton(
+        backgroundColor: Colors.greenAccent,
+        onPressed: () {},
+        child: Icon(Icons.add),
+        ),
+        FloatingActionButton(
+        backgroundColor: Colors.indigoAccent,
+        onPressed: () {},
+        child: Icon(Icons.camera),
+        ),
+        FloatingActionButton(
+        backgroundColor: Colors.orangeAccent,
+        onPressed: () {},
+        child: Icon(Icons.card_giftcard),
+        ),
+    ];
+    
+    //....
+
+    CircleFloatingButton.floatingActionButton(
+    items: itemsActionBar,
+    color: Colors.redAccent,
+    icon: Icons.ac_unit,
+    duration: Duration(milliseconds: 1000),
+    curveAnim: Curves.ease)
+
+    //......
+
+    CircleFloatingButton.completeCircle(
+        items: itemsToBody,
+        color: Colors.red,
+        duration: Duration(milliseconds: 1000),
+    curveAnim: Curves.elasticOut)
+
+    //........
+
+    CircleFloatingButton.semiCircle(
+        items: itemsToBody,
+        color: Colors.red,
+        duration: Duration(milliseconds: 1000),
+    curveAnim: Curves.elasticOut)
+```
