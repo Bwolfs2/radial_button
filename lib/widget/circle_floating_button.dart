@@ -80,16 +80,17 @@ class CircleFloatingButton extends StatefulWidget {
     );
   }
 
-  factory CircleFloatingButton.semiCircle(
-      {List<Widget> items,
-      Key key,
-      double radius = 100,
-      Position position,
-      Duration duration,
-      IconData icon,
-      Color color,
-      Curve curveAnim,
-      bool useOpacity,}) {
+  factory CircleFloatingButton.semiCircle({
+    List<Widget> items,
+    Key key,
+    double radius = 100,
+    Position position,
+    Duration duration,
+    IconData icon,
+    Color color,
+    Curve curveAnim,
+    bool useOpacity,
+  }) {
     return CircleFloatingButton(
       items: items,
       radius: radius,
@@ -112,7 +113,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
   BlocController _bloc;
   GlobalKey containerKey = GlobalKey();
 
-  close(){
+  close() {
     _bloc.toggle();
   }
 

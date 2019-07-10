@@ -1,5 +1,7 @@
 
 
+## [version: 0.1.1] - Add option to close, and update the Sample
+
 ## [version: 0.1.0] - First Stable Version, with functional Sample
 
 ## [version: 0.0.6] - Add Sample
