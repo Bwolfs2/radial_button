@@ -200,7 +200,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
     var quantity = widget.items.length;
     return Container(
       child: Stack(
-         overflow: Overflow.visible,
+        overflow: Overflow.visible,
         children: List.generate(
           quantity,
           (index) {
@@ -246,7 +246,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
 
     return Container(
       child: Stack(
-         overflow: Overflow.visible,
+        overflow: Overflow.visible,
         children: List.generate(
           quantity,
           (index) {
