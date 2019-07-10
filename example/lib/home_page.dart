@@ -61,13 +61,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: CircleFloatingButton.semiCircle(
-          items: itemsToBody,
-          color: Colors.red,
-          icon: Icons.adb,
-          duration: Duration(milliseconds: 1000),
-          curveAnim: Curves.elasticOut,
+      appBar: AppBar(
+        title: Text("Sample"),
+        centerTitle: true,
+      ),
+      body: Container(       
+        child: Stack(
+          children: <Widget>[
+            Container( 
+              child: CircleFloatingButton.semiCircle(
+                items: itemsToBody,
+                color: Colors.red,
+                icon: Icons.adb,
+                duration: Duration(milliseconds: 1000),
+                curveAnim: Curves.elasticOut,
+              ),
+            ),
+            Positioned(
+              bottom: 100,
+              right: 10,
+              child: Container(                
+                height: 300,
+                width: 300,
+                child: CircleFloatingButton.completeCircle(
+                  items: itemsToBody,
+                  color: Colors.blue,
+                  icon: Icons.adb,
+                  duration: Duration(milliseconds: 1000),
+                  curveAnim: Curves.elasticOut,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: CircleFloatingButton.floatingActionButton(
