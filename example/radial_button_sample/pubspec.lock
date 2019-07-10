@@ -84,10 +84,10 @@ packages:
   radial_button:
     dependency: "direct main"
     description:
-      path: "..\\..\\.."
+      path: "..\\.."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.6-pre-v0.1"
   rxdart:
     dependency: transitive
     description:

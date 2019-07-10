@@ -188,7 +188,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
                 onPressed: () {
                   bloc.toggle();
                 },
-                child: Icon(widget.buttonIcon),
+                child: Icon(widget.buttonIcon ?? Icons.add),
               ),
             ),
           ),
@@ -277,7 +277,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
                 onPressed: () {
                   bloc.toggle();
                 },
-                child: Icon(widget.buttonIcon),
+                child: Icon(widget.buttonIcon ?? Icons.add),
               ),
             ),
           ),

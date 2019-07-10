@@ -1,11 +1,14 @@
-## [0.0.1] - First Release .
 
-## [0.0.2] - Add image and Sample in the README.mb
+## [version: 0.0.6-pre-v0.1] - Thing to be better positioned
 
-## [0.0.3] - Add Authors
+## [0.0.5] - Add Github Link
 
 ## [0.0.4] - Add Images
 
-## [0.0.5] - Add Github Link
+## [0.0.3] - Add Authors
+
+## [0.0.2] - Add image and Sample in the README.mb
+
+## [0.0.1] - First Release .
 
 First release, i hope u enjoy =)

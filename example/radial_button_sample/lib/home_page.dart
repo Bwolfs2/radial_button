@@ -65,6 +65,7 @@ class _HomePageState extends State<HomePage> {
         child: CircleFloatingButton.semiCircle(
           items: itemsToBody,
           color: Colors.red,
+          icon: Icons.adb,
           duration: Duration(milliseconds: 1000),
           curveAnim: Curves.elasticOut,
         ),
