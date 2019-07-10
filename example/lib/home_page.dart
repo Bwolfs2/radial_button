@@ -7,56 +7,132 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var itemsActionBar = [
-    FloatingActionButton(
-      backgroundColor: Colors.greenAccent,
-      onPressed: () {},
-      child: Icon(Icons.add),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.indigoAccent,
-      onPressed: () {},
-      child: Icon(Icons.camera),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.orangeAccent,
-      onPressed: () {},
-      child: Icon(Icons.card_giftcard),
-    ),
-  ];
+  List<Widget> itemsActionBar;
+  List<Widget> itemsToBody;
+  List<Widget> itemsToBodyComplete;
 
-  var itemsToBody = [
-    FloatingActionButton(
-      backgroundColor: Colors.greenAccent,
-      onPressed: () {},
-      child: Icon(Icons.add),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.indigoAccent,
-      onPressed: () {},
-      child: Icon(Icons.camera),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.orangeAccent,
-      onPressed: () {},
-      child: Icon(Icons.card_giftcard),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.indigoAccent,
-      onPressed: () {},
-      child: Icon(Icons.accessibility_new),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.white70,
-      onPressed: () {},
-      child: Icon(Icons.camera),
-    ),
-    FloatingActionButton(
-      backgroundColor: Colors.black,
-      onPressed: () {},
-      child: Icon(Icons.camera),
-    ),
-  ];
+  GlobalKey<CircleFloatingButtonState> key01 =
+      GlobalKey<CircleFloatingButtonState>();
+  GlobalKey<CircleFloatingButtonState> key02 =
+      GlobalKey<CircleFloatingButtonState>();
+  GlobalKey<CircleFloatingButtonState> key03 =
+      GlobalKey<CircleFloatingButtonState>();
+
+  fechar() {
+    key01.currentState.close();
+  }
+
+  @override
+  void initState() {
+    itemsActionBar = [
+      FloatingActionButton(
+        backgroundColor: Colors.greenAccent,
+        onPressed: fechar,
+        child: Icon(Icons.add),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.indigoAccent,
+        onPressed: fechar,
+        child: Icon(Icons.camera),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.orangeAccent,
+        onPressed: fechar,
+        child: Icon(Icons.card_giftcard),
+      ),
+    ];
+
+    itemsToBody = [
+      FloatingActionButton(
+        backgroundColor: Colors.greenAccent,
+        onPressed: () {
+          key02.currentState.close();
+        },
+        child: Icon(Icons.add),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.indigoAccent,
+        onPressed: () {
+          key02.currentState.close();
+        },
+        child: Icon(Icons.camera),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.orangeAccent,
+        onPressed: () {
+          key02.currentState.close();
+        },
+        child: Icon(Icons.card_giftcard),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.indigoAccent,
+        onPressed: () {
+          key02.currentState.close();
+        },
+        child: Icon(Icons.accessibility_new),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.white70,
+        onPressed: () {
+          key02.currentState.close();
+        },
+        child: Icon(Icons.camera),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.black,
+        onPressed: () {
+          key02.currentState.close();
+        },
+        child: Icon(Icons.camera),
+      ),
+    ];
+
+    itemsToBodyComplete = [
+      FloatingActionButton(
+        backgroundColor: Colors.redAccent,
+        onPressed: () {
+          key03.currentState.close();
+        },
+        child: Icon(Icons.add),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.indigoAccent,
+        onPressed: () {
+          key03.currentState.close();
+        },
+        child: Icon(Icons.camera),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.blueAccent,
+        onPressed: () {
+          key03.currentState.close();
+        },
+        child: Icon(Icons.card_giftcard),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.indigoAccent,
+        onPressed: () {
+          key03.currentState.close();
+        },
+        child: Icon(Icons.accessibility_new),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.cyanAccent,
+        onPressed: () {
+          key03.currentState.close();
+        },
+        child: Icon(Icons.camera),
+      ),
+      FloatingActionButton(
+        backgroundColor: Colors.brown,
+        onPressed: () {
+          key03.currentState.close();
+        },
+        child: Icon(Icons.camera),
+      ),
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,11 +141,12 @@ class _HomePageState extends State<HomePage> {
         title: Text("Sample"),
         centerTitle: true,
       ),
-      body: Container(       
+      body: Container(
         child: Stack(
           children: <Widget>[
-            Container( 
+            Container(
               child: CircleFloatingButton.semiCircle(
+                key: key02,
                 items: itemsToBody,
                 color: Colors.red,
                 icon: Icons.adb,
@@ -80,11 +157,12 @@ class _HomePageState extends State<HomePage> {
             Positioned(
               bottom: 100,
               right: 10,
-              child: Container(                
+              child: Container(
                 height: 300,
                 width: 300,
                 child: CircleFloatingButton.completeCircle(
-                  items: itemsToBody,
+                  key: key03,
+                  items: itemsToBodyComplete,
                   color: Colors.blue,
                   icon: Icons.adb,
                   duration: Duration(milliseconds: 1000),
@@ -96,6 +174,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: CircleFloatingButton.floatingActionButton(
+        key: key01,
         items: itemsActionBar,
         color: Colors.redAccent,
         icon: Icons.ac_unit,

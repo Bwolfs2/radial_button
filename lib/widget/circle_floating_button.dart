@@ -41,9 +41,11 @@ class CircleFloatingButton extends StatefulWidget {
       IconData icon,
       Color color,
       Curve curveAnim,
-      bool useOpacity}) {
+      bool useOpacity,
+      Key key}) {
     return CircleFloatingButton(
       items: items,
+      key: key,
       radius: radius,
       position: Position.bottom,
       type: CircleType.quarterPart,
@@ -62,7 +64,8 @@ class CircleFloatingButton extends StatefulWidget {
       IconData icon,
       Color color,
       Curve curveAnim,
-      bool useOpacity}) {
+      bool useOpacity,
+      Key key}) {
     return CircleFloatingButton(
       items: items,
       radius: radius,
@@ -73,18 +76,20 @@ class CircleFloatingButton extends StatefulWidget {
       buttonColor: color,
       curve: curveAnim,
       opacity: useOpacity,
+      key: key,
     );
   }
 
   factory CircleFloatingButton.semiCircle(
       {List<Widget> items,
+      Key key,
       double radius = 100,
       Position position,
       Duration duration,
       IconData icon,
       Color color,
       Curve curveAnim,
-      bool useOpacity}) {
+      bool useOpacity,}) {
     return CircleFloatingButton(
       items: items,
       radius: radius,
@@ -95,21 +100,26 @@ class CircleFloatingButton extends StatefulWidget {
       buttonColor: color,
       curve: curveAnim,
       opacity: useOpacity,
+      key: key,
     );
   }
 
   @override
-  _CircleFloatingButtonState createState() => _CircleFloatingButtonState();
+  CircleFloatingButtonState createState() => CircleFloatingButtonState();
 }
 
-class _CircleFloatingButtonState extends State<CircleFloatingButton> {
-  BlocController bloc;
+class CircleFloatingButtonState extends State<CircleFloatingButton> {
+  BlocController _bloc;
   GlobalKey containerKey = GlobalKey();
+
+  close(){
+    _bloc.toggle();
+  }
 
   @override
   initState() {
     super.initState();
-    bloc = BlocController();
+    _bloc = BlocController();
   }
 
   Offset _getOffset(double angle, double radius) {
@@ -172,7 +182,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
                       .dx +
                   widget.radius,
               initState: widget.radius,
-              bloc: bloc,
+              bloc: _bloc,
               widget: widget.items[index],
               duration: widget.duration,
               curve: widget.curve,
@@ -186,7 +196,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
               child: FloatingActionButton(
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
-                  bloc.toggle();
+                  _bloc.toggle();
                 },
                 child: Icon(widget.buttonIcon ?? Icons.add),
               ),
@@ -218,7 +228,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
                         .dx +
                     widget.radius,
                 initState: widget.radius,
-                bloc: bloc,
+                bloc: _bloc,
                 duration: widget.duration,
                 curve: widget.curve,
                 opacity: widget.opacity,
@@ -231,7 +241,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
               child: FloatingActionButton(
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
-                  bloc.toggle();
+                  _bloc.toggle();
                 },
                 child: Icon(widget.buttonIcon ?? Icons.add),
               ),
@@ -263,7 +273,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
                       .dx +
                   widget.radius,
               initState: widget.radius,
-              bloc: bloc,
+              bloc: _bloc,
               curve: widget.curve,
               duration: widget.duration,
               opacity: widget.opacity,
@@ -277,7 +287,7 @@ class _CircleFloatingButtonState extends State<CircleFloatingButton> {
               child: FloatingActionButton(
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
-                  bloc.toggle();
+                  _bloc.toggle();
                 },
                 child: Icon(widget.buttonIcon ?? Icons.add),
               ),
