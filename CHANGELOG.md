@@ -1,4 +1,6 @@
 
+## [version: 0.0.6] - Add Sample
+
 ## [version: 0.0.6-pre-v0.1] - Thing to be better positioned
 
 ## [0.0.5] - Add Github Link
