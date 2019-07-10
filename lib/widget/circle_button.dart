@@ -55,10 +55,12 @@ class _CircleButtonState extends State<CircleButton>
         return Positioned(
           top: positionAnimation.value.dy,
           left: positionAnimation.value.dx,
-          child: widget.opacity == null || widget.opacity ? Opacity(
-            opacity: controller.value,
-            child: child,
-          ) : child,
+          child: widget.opacity == null || widget.opacity
+              ? Opacity(
+                  opacity: controller.value,
+                  child: child,
+                )
+              : child,
         );
       },
     );

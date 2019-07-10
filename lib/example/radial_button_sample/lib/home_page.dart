@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
- var itemsToBody = [
+  var itemsToBody = [
     FloatingActionButton(
       backgroundColor: Colors.greenAccent,
       onPressed: () {},
@@ -41,17 +41,17 @@ class _HomePageState extends State<HomePage> {
       onPressed: () {},
       child: Icon(Icons.card_giftcard),
     ),
-      FloatingActionButton(
+    FloatingActionButton(
       backgroundColor: Colors.indigoAccent,
       onPressed: () {},
       child: Icon(Icons.accessibility_new),
     ),
-      FloatingActionButton(
+    FloatingActionButton(
       backgroundColor: Colors.white70,
       onPressed: () {},
       child: Icon(Icons.camera),
     ),
-     FloatingActionButton(
+    FloatingActionButton(
       backgroundColor: Colors.black,
       onPressed: () {},
       child: Icon(Icons.camera),
@@ -62,19 +62,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child:CircleFloatingButton.semiCircle(
+        child: CircleFloatingButton.semiCircle(
           items: itemsToBody,
           color: Colors.red,
           duration: Duration(milliseconds: 1000),
-        curveAnim: Curves.elasticOut,
-        ) ,
+          curveAnim: Curves.elasticOut,
+        ),
       ),
       floatingActionButton: CircleFloatingButton.floatingActionButton(
         items: itemsActionBar,
         color: Colors.redAccent,
         icon: Icons.ac_unit,
         duration: Duration(milliseconds: 1000),
-        curveAnim: Curves.ease,        
+        curveAnim: Curves.ease,
       ),
     );
   }

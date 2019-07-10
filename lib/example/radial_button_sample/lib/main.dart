@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutterando Demo',
-      theme: ThemeData(       
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),

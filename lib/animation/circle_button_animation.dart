@@ -13,21 +13,21 @@ mixin CircleButtonAnimation<T extends StatefulWidget>
   Duration get duration;
   Curve get curve;
   @override
-  void initState() {    
+  void initState() {
     super.initState();
     controller = AnimationController(duration: duration, vsync: this);
     positionAnimation = Tween<Offset>(
       begin: initialOffset,
       end: finalOffset,
     ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: Interval(
-              0,
-              0.9,
-              curve: curve ?? Curves.easeOut,
-            ),
-          ),
+      CurvedAnimation(
+        parent: controller,
+        curve: Interval(
+          0,
+          0.9,
+          curve: curve ?? Curves.easeOut,
+        ),
+      ),
     );
 
     bloc.opened.listen((value) {

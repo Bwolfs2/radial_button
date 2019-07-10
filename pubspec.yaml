@@ -1,5 +1,5 @@
 name: radial_button
-description: A new Radial Button 
+description: The purpose of Radial Button is facilitating the creation for FloatingActionButton and for the purpose that you need, using complete circle, semi-circle.
 version: 0.0.5
 
 authors:
@@ -17,7 +17,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rxdart: ^0.22.0
+  rxdart: 0.22.0	
 
 dev_dependencies:
   flutter_test:
