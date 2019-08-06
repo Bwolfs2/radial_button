@@ -2,8 +2,8 @@
 
 A new Radial Button 
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/bwolf)
 
-[Github](https://github.com/Bwolfs2/radial_button)
 
 ## Start
 

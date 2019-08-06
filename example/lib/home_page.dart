@@ -26,16 +26,19 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     itemsActionBar = [
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.greenAccent,
         onPressed: fechar,
         child: Icon(Icons.add),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: fechar,
         child: Icon(Icons.camera),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.orangeAccent,
         onPressed: fechar,
         child: Icon(Icons.card_giftcard),
@@ -44,6 +47,7 @@ class _HomePageState extends State<HomePage> {
 
     itemsToBody = [
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.greenAccent,
         onPressed: () {
           key02.currentState.close();
@@ -51,6 +55,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.add),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
           key02.currentState.close();
@@ -58,6 +63,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.camera),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.orangeAccent,
         onPressed: () {
           key02.currentState.close();
@@ -65,6 +71,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.card_giftcard),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
           key02.currentState.close();
@@ -72,6 +79,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.accessibility_new),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.white70,
         onPressed: () {
           key02.currentState.close();
@@ -79,6 +87,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.camera),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.black,
         onPressed: () {
           key02.currentState.close();
@@ -89,6 +98,7 @@ class _HomePageState extends State<HomePage> {
 
     itemsToBodyComplete = [
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.redAccent,
         onPressed: () {
           key03.currentState.close();
@@ -96,6 +106,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.add),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
           key03.currentState.close();
@@ -103,6 +114,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.camera),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.blueAccent,
         onPressed: () {
           key03.currentState.close();
@@ -110,6 +122,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.card_giftcard),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
           key03.currentState.close();
@@ -117,6 +130,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.accessibility_new),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.cyanAccent,
         onPressed: () {
           key03.currentState.close();
@@ -124,6 +138,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.camera),
       ),
       FloatingActionButton(
+        heroTag: UniqueKey(),
         backgroundColor: Colors.brown,
         onPressed: () {
           key03.currentState.close();

@@ -6,7 +6,6 @@ import 'circle_button.dart';
 class CircleFloatingButton extends StatefulWidget {
   final List<Widget> items;
   final double radius;
-
   final Position position;
   final double right;
   final double top;
@@ -195,6 +194,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
               top: widget.radius,
               left: widget.radius,
               child: FloatingActionButton(
+                heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
                   _bloc.toggle();
@@ -240,6 +240,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
               top: widget.radius,
               left: widget.radius,
               child: FloatingActionButton(
+                heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
                   _bloc.toggle();
@@ -286,6 +287,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
               top: widget.radius,
               left: widget.radius,
               child: FloatingActionButton(
+                heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
                   _bloc.toggle();
