@@ -16,6 +16,7 @@ class CircleFloatingButton extends StatefulWidget {
   final IconData buttonIcon;
   final Curve curve;
   final bool opacity;
+  final Widget child;
 
   CircleFloatingButton(
       {Key key,
@@ -30,7 +31,7 @@ class CircleFloatingButton extends StatefulWidget {
       this.buttonColor,
       this.buttonIcon,
       this.curve,
-      this.opacity})
+      this.opacity, this.child})
       : super(key: key ?? UniqueKey());
 
   factory CircleFloatingButton.floatingActionButton(
@@ -41,7 +42,8 @@ class CircleFloatingButton extends StatefulWidget {
       Color color,
       Curve curveAnim,
       bool useOpacity,
-      Key key}) {
+      Key key,
+      Widget child}) {
     return CircleFloatingButton(
       items: items,
       key: key,
@@ -53,6 +55,7 @@ class CircleFloatingButton extends StatefulWidget {
       buttonColor: color,
       curve: curveAnim,
       opacity: useOpacity,
+      child: child
     );
   }
 
@@ -64,7 +67,7 @@ class CircleFloatingButton extends StatefulWidget {
       Color color,
       Curve curveAnim,
       bool useOpacity,
-      Key key}) {
+      Key key, Widget child}) {
     return CircleFloatingButton(
       items: items,
       radius: radius,
@@ -76,6 +79,7 @@ class CircleFloatingButton extends StatefulWidget {
       curve: curveAnim,
       opacity: useOpacity,
       key: key,
+      child: child,
     );
   }
 
@@ -89,6 +93,7 @@ class CircleFloatingButton extends StatefulWidget {
     Color color,
     Curve curveAnim,
     bool useOpacity,
+    Widget child
   }) {
     return CircleFloatingButton(
       items: items,
@@ -101,6 +106,7 @@ class CircleFloatingButton extends StatefulWidget {
       curve: curveAnim,
       opacity: useOpacity,
       key: key,
+      child: child,
     );
   }
 
@@ -193,7 +199,13 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
             Positioned(
               top: widget.radius,
               left: widget.radius,
-              child: FloatingActionButton(
+              child:  widget.child != null ? InkWell(
+                child: widget.child,
+                onTap:  (){
+                   _bloc.toggle();
+                },
+              )
+              : FloatingActionButton(
                 heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
                 onPressed: () {
@@ -239,13 +251,21 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
             Positioned(
               top: widget.radius,
               left: widget.radius,
-              child: FloatingActionButton(
-                heroTag: UniqueKey(),
-                backgroundColor: widget.buttonColor,
-                onPressed: () {
-                  _bloc.toggle();
-                },
-                child: Icon(widget.buttonIcon ?? Icons.add),
+              child:  Container(
+                child: widget.child != null ? Center(child:  InkWell(
+                  child: widget.child,
+                  onTap:  (){
+                     _bloc.toggle();
+                  },
+                ),)
+                : FloatingActionButton(
+                  heroTag: UniqueKey(),
+                  backgroundColor: widget.buttonColor,
+                  onPressed: () {
+                    _bloc.toggle();
+                  },
+                  child: Icon(widget.buttonIcon ?? Icons.add),
+                ),
               ),
             ),
           ),
@@ -286,7 +306,13 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
             Positioned(
               top: widget.radius,
               left: widget.radius,
-              child: FloatingActionButton(
+              child:  widget.child != null ? InkWell(
+                child: widget.child,
+                onTap:  (){
+                   _bloc.toggle();
+                },
+              )
+              : FloatingActionButton(
                 heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
                 onPressed: () {

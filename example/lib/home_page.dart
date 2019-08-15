@@ -182,6 +182,13 @@ class _HomePageState extends State<HomePage> {
                   icon: Icons.adb,
                   duration: Duration(milliseconds: 1000),
                   curveAnim: Curves.elasticOut,
+                  child: Container(
+                    color: Colors.red,
+                    child: CircleAvatar(
+                      child: Text("Casa"),
+                      maxRadius: 30,
+                    ),
+                  ),
                 ),
               ),
             ),

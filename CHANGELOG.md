@@ -1,5 +1,7 @@
 
 
+## [version: 0.1.3] - Add option to inform ur own widget to center of radial
+
 ## [version: 0.1.2] - Fix HeroTag problem
 
 ## [version: 0.1.1] - Add option to close, and update the Sample
