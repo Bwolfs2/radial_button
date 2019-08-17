@@ -27,7 +27,7 @@ dependencies:
 
 ## Usage Example
 
-import flutter_signin_button.dart
+import circle_floating_button.dart
 
 ```dart
 import 'package:radial_button/widget/circle_floating_button.dart';
