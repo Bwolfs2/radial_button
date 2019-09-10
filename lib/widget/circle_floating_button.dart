@@ -199,12 +199,15 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
             Positioned(
               top: widget.radius,
               left: widget.radius,
-              child:  widget.child != null ? InkWell(
-                child: widget.child,
-                onTap:  (){
-                   _bloc.toggle();
-                },
-              )
+              child:  widget.child != null 
+              ? Material(
+                  child: InkWell(
+                    child: widget.child,
+                    onTap: () {
+                      _bloc.toggle();
+                    },
+                  ),
+                )
               : FloatingActionButton(
                 heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
@@ -252,12 +255,17 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
               top: widget.radius,
               left: widget.radius,
               child:  Container(
-                child: widget.child != null ? Center(child:  InkWell(
-                  child: widget.child,
-                  onTap:  (){
-                     _bloc.toggle();
-                  },
-                ),)
+                child: widget.child != null
+                    ? Material(
+                        child: Center(
+                          child: InkWell(
+                            child: widget.child,
+                            onTap: () {
+                              _bloc.toggle();
+                            },
+                          ),
+                        ),
+                      )
                 : FloatingActionButton(
                   heroTag: UniqueKey(),
                   backgroundColor: widget.buttonColor,
@@ -306,12 +314,15 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
             Positioned(
               top: widget.radius,
               left: widget.radius,
-              child:  widget.child != null ? InkWell(
-                child: widget.child,
-                onTap:  (){
-                   _bloc.toggle();
-                },
-              )
+              child: widget.child != null
+                  ? Material(
+                      child: InkWell(
+                        child: widget.child,
+                        onTap: () {
+                          _bloc.toggle();
+                        },
+                      ),
+                    )
               : FloatingActionButton(
                 heroTag: UniqueKey(),
                 backgroundColor: widget.buttonColor,
