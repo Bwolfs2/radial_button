@@ -168,8 +168,8 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
   Widget quarterPart() {
     var quantity = widget.items.length;
     return Container(
-      width: widget.radius * 1.6,
-      height: widget.radius * 1.6,
+      width: 60 + widget.radius,
+      height: 60 + widget.radius,
       child: Stack(
         overflow: Overflow.visible,
         children: List.generate(
