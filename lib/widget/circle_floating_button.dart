@@ -119,7 +119,11 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
   GlobalKey containerKey = GlobalKey();
 
   close() {
-    _bloc.toggle();
+    _bloc.close();
+  }
+
+  toggle(){
+	  _bloc.toggle();
   }
 
   @override
