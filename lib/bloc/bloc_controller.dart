@@ -3,7 +3,7 @@ import 'package:rxdart/rxdart.dart';
 class BlocController {
   var _controller = BehaviorSubject.seeded(false);
 
-  Observable<bool> get opened => _controller.stream;
+  Stream<bool> get opened => _controller.stream;
 
   Sink<bool> get changeOpened => _controller.sink;
 

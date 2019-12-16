@@ -1,5 +1,10 @@
 
 
+
+## [version: 0.1.5] - Migrations to RxDart ^0.23.1
+
+## [version: 0.1.4] - Contributions of Stephen Felt: Correct offset and Inkwell needs material wrapper or else it complains
+
 ## [version: 0.1.3] - Add option to inform ur own widget to center of radial
 
 ## [version: 0.1.2] - Fix HeroTag problem
