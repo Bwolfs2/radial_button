@@ -14,4 +14,8 @@ class BlocController {
   void toggle() {
     _controller.add(!_controller.value);
   }
+
+  void close(){
+	  _controller.add(false);
+  }
 }
