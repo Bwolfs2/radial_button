@@ -4,14 +4,14 @@ import '../bloc/bloc_controller.dart';
 
 mixin CircleButtonAnimation<T extends StatefulWidget>
     on State<T>, TickerProviderStateMixin<T> {
-  AnimationController controller;
-  Animation<Offset> positionAnimation;
+  late final AnimationController controller;
+  late final Animation<Offset> positionAnimation;
 
   Offset get initialOffset;
   Offset get finalOffset;
   BlocController get bloc;
   Duration get duration;
-  Curve get curve;
+  Curve? get curve;
   @override
   void initState() {
     super.initState();
