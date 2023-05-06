@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:radial_button/bloc/bloc_controller.dart';
 
+import '../bloc/bloc_controller.dart';
 import 'circle_button.dart';
 
 class CircleFloatingButton extends StatefulWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:radial_button/animation/circle_button_animation.dart';
-import 'package:radial_button/bloc/bloc_controller.dart';
+
+import '../animation/circle_button_animation.dart';
+import '../bloc/bloc_controller.dart';
 
 class CircleButton extends StatefulWidget {
   final double finalTop;

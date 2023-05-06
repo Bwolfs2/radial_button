@@ -10,10 +10,11 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter\
+    sdk: flutter
 
   radial_button:
-    path: "../"
+    git:
+      url: https://github.com/viniciusoliverrs/radial_button
 
   cupertino_icons: ^1.0.2
 

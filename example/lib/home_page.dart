@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:radial_button/widget/circle_floating_button.dart';
+import 'package:radial_button/widget/widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
