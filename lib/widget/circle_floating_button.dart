@@ -46,7 +46,7 @@ class CircleFloatingButton extends StatefulWidget {
     required Curve curveAnim,
     required bool useOpacity,
     Key? key,
-     Widget? child,
+    Widget? child,
   }) {
     return CircleFloatingButton(
       items: items,
@@ -63,16 +63,17 @@ class CircleFloatingButton extends StatefulWidget {
     );
   }
 
-  factory CircleFloatingButton.completeCircle(
-      {required List<Widget> items,
-      double radius = 100,
-      required Duration duration,
-      required IconData icon,
-      required Color color,
-      required Curve curveAnim,
-      required bool useOpacity,
-      Key? key,
-      required Widget child}) {
+  factory CircleFloatingButton.completeCircle({
+    required List<Widget> items,
+    double radius = 100,
+    required Duration duration,
+    required IconData icon,
+    required Color color,
+    required Curve curveAnim,
+    required bool useOpacity,
+    Key? key,
+    required Widget child,
+  }) {
     return CircleFloatingButton(
       items: items,
       radius: radius,
@@ -123,28 +124,28 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
   late final BlocController _bloc;
   GlobalKey containerKey = GlobalKey();
 
-  close() {
+  void close() {
     _bloc.close();
   }
 
-  toggle() {
+  void toggle() {
     _bloc.toggle();
   }
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     _bloc = BlocController();
   }
 
   Offset _getOffset(double angle, double radius) {
-    final double radians = math.pi * angle / 180.0;
-    final double x = radius * math.cos(radians) * -1;
-    final double y = radius * math.sin(radians) * -1;
+    final radians = math.pi * angle / 180.0;
+    final x = radius * math.cos(radians) * -1;
+    final y = radius * math.sin(radians) * -1;
     return Offset(x, y);
   }
 
-  getRotatePosition(Position postion) {
+  int getRotatePosition(Position postion) {
     switch (postion) {
       case Position.right:
         return 90;
@@ -153,7 +154,6 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
       case Position.left:
         return 270;
       case Position.top:
-      default:
         return 0;
     }
   }
@@ -171,25 +171,26 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
   }
 
   Widget quarterPart() {
-    var quantity = widget.items.length;
-    return Container(
+    final quantity = widget.items.length;
+    return SizedBox(
       width: 60 + widget.radius,
       height: 60 + widget.radius,
       child: Stack(
         children: List.generate(
           quantity,
           (index) {
-            var angulo = (90) / (quantity - 1) * (index);
+            final angulo = (90) / (quantity - 1) * index;
 
             return CircleButton(
               finalRight: _getOffset(
-                          angulo + getRotatePosition(widget.position),
-                          -widget.radius)
-                      .dy +
+                    angulo + getRotatePosition(widget.position),
+                    -widget.radius,
+                  ).dy +
                   widget.radius,
-              finalTop: _getOffset(angulo + getRotatePosition(widget.position),
-                          -widget.radius)
-                      .dx +
+              finalTop: _getOffset(
+                    angulo + getRotatePosition(widget.position),
+                    -widget.radius,
+                  ).dx +
                   widget.radius,
               initState: widget.radius,
               bloc: _bloc,
@@ -206,18 +207,14 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
               child: widget.child != null
                   ? Material(
                       child: InkWell(
+                        onTap: _bloc.toggle,
                         child: widget.child,
-                        onTap: () {
-                          _bloc.toggle();
-                        },
                       ),
                     )
                   : FloatingActionButton(
                       heroTag: UniqueKey(),
                       backgroundColor: widget.buttonColor,
-                      onPressed: () {
-                        _bloc.toggle();
-                      },
+                      onPressed: _bloc.toggle,
                       child: Icon(widget.buttonIcon),
                     ),
             ),
@@ -227,115 +224,105 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
   }
 
   Widget complete() {
-    var quantity = widget.items.length;
-    return Container(
-      child: Stack(
-        children: List.generate(
-          quantity,
-          (index) {
-            var angulo = (360) / (quantity) * (index);
+    final quantity = widget.items.length;
+    return Stack(
+      children: List.generate(
+        quantity,
+        (index) {
+          final angulo = (360) / quantity * index;
 
-            return CircleButton(
-                finalRight: _getOffset(
-                            angulo + getRotatePosition(widget.position),
-                            -widget.radius)
-                        .dy +
-                    widget.radius,
-                finalTop: _getOffset(
-                            angulo + getRotatePosition(widget.position),
-                            -widget.radius)
-                        .dx +
-                    widget.radius,
-                initState: widget.radius,
-                bloc: _bloc,
-                duration: widget.duration,
-                curve: widget.curve,
-                opacity: widget.opacity,
-                widget: widget.items[index]);
-          },
-        )..add(
-            Positioned(
-              top: widget.radius,
-              left: widget.radius,
-              child: Container(
-                child: widget.child != null
-                    ? Material(
-                        child: Center(
-                          child: InkWell(
-                            child: widget.child,
-                            onTap: () {
-                              _bloc.toggle();
-                            },
-                          ),
-                        ),
-                      )
-                    : FloatingActionButton(
-                        heroTag: UniqueKey(),
-                        backgroundColor: widget.buttonColor,
-                        onPressed: () {
-                          _bloc.toggle();
-                        },
-                        child: Icon(widget.buttonIcon),
-                      ),
-              ),
-            ),
-          ),
-      ),
-    );
-  }
-
-  Widget semi() {
-    var quantity = widget.items.length;
-
-    return Container(
-      child: Stack(
-        children: List.generate(
-          quantity,
-          (index) {
-            var angulo = (180) / (quantity - 1) * (index);
-
-            return CircleButton(
-              finalRight: _getOffset(
-                          angulo + getRotatePosition(widget.position),
-                          -widget.radius)
-                      .dy +
-                  widget.radius,
-              finalTop: _getOffset(angulo + getRotatePosition(widget.position),
-                          -widget.radius)
-                      .dx +
-                  widget.radius,
-              initState: widget.radius,
-              bloc: _bloc,
-              curve: widget.curve,
-              duration: widget.duration,
-              opacity: widget.opacity,
-              widget: widget.items[index],
-            );
-          },
-        )..add(
-            Positioned(
-              top: widget.radius,
-              left: widget.radius,
+          return CircleButton(
+            finalRight: _getOffset(
+                  angulo + getRotatePosition(widget.position),
+                  -widget.radius,
+                ).dy +
+                widget.radius,
+            finalTop: _getOffset(
+                  angulo + getRotatePosition(widget.position),
+                  -widget.radius,
+                ).dx +
+                widget.radius,
+            initState: widget.radius,
+            bloc: _bloc,
+            duration: widget.duration,
+            curve: widget.curve,
+            opacity: widget.opacity,
+            widget: widget.items[index],
+          );
+        },
+      )..add(
+          Positioned(
+            top: widget.radius,
+            left: widget.radius,
+            child: Container(
               child: widget.child != null
                   ? Material(
-                      child: InkWell(
-                        child: widget.child,
-                        onTap: () {
-                          _bloc.toggle();
-                        },
+                      child: Center(
+                        child: InkWell(
+                          onTap: _bloc.toggle,
+                          child: widget.child,
+                        ),
                       ),
                     )
                   : FloatingActionButton(
                       heroTag: UniqueKey(),
                       backgroundColor: widget.buttonColor,
-                      onPressed: () {
-                        _bloc.toggle();
-                      },
+                      onPressed: _bloc.toggle,
                       child: Icon(widget.buttonIcon),
                     ),
             ),
           ),
-      ),
+        ),
+    );
+  }
+
+  Widget semi() {
+    final quantity = widget.items.length;
+
+    return Stack(
+      children: List.generate(
+        quantity,
+        (index) {
+          final angulo = (180) / (quantity - 1) * index;
+
+          return CircleButton(
+            finalRight: _getOffset(
+                  angulo + getRotatePosition(widget.position),
+                  -widget.radius,
+                ).dy +
+                widget.radius,
+            finalTop: _getOffset(
+                  angulo + getRotatePosition(widget.position),
+                  -widget.radius,
+                ).dx +
+                widget.radius,
+            initState: widget.radius,
+            bloc: _bloc,
+            curve: widget.curve,
+            duration: widget.duration,
+            opacity: widget.opacity,
+            widget: widget.items[index],
+          );
+        },
+      )..add(
+          Positioned(
+            top: widget.radius,
+            left: widget.radius,
+            child: widget.child != null
+                ? Material(
+                    child: InkWell(
+                      onTap: _bloc.toggle,
+                      child: widget.child,
+                    ),
+                  )
+                : FloatingActionButton(
+                    heroTag: UniqueKey(),
+                    backgroundColor: widget.buttonColor,
+                    onPressed: _bloc.toggle,
+                    child: Icon(widget.buttonIcon),
+                  ),
+          ),
+        ),
     );
   }
 }

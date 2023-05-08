@@ -13,20 +13,20 @@ class CircleButton extends StatefulWidget {
   final Curve curve;
   final bool opacity;
 
-  CircleButton(
-      {Key? key,
-      required this.finalTop,
-      required this.finalRight,
-      required this.initState,
-      required this.bloc,
-      this.duration = const Duration(milliseconds: 300),
-      required this.widget,
-      required this.curve,
-      this.opacity = true})
-      : super(key: key);
+  const CircleButton({
+    Key? key,
+    required this.finalTop,
+    required this.finalRight,
+    required this.initState,
+    required this.bloc,
+    this.duration = const Duration(milliseconds: 300),
+    required this.widget,
+    required this.curve,
+    this.opacity = true,
+  }) : super(key: key);
 
   @override
-  _CircleButtonState createState() => _CircleButtonState();
+  State<CircleButton> createState() => _CircleButtonState();
 }
 
 class _CircleButtonState extends State<CircleButton>

@@ -7,7 +7,7 @@ class BlocController {
 
   Sink<bool> get changeOpened => _controller.sink;
 
-  dispose() {
+  void dispose() {
     _controller.close();
   }
 

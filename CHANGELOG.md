@@ -1,5 +1,4 @@
-
-
+## [version: 1.0.1] - Update RxDart
 
 ## [version: 0.1.5] - Migrations to RxDart ^0.23.1
 

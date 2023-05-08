@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:radial_button/widget/widget.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   GlobalKey<CircleFloatingButtonState> key03 =
       GlobalKey<CircleFloatingButtonState>();
 
-  fechar() {
+  void close() {
     key01.currentState!.close();
   }
 
@@ -28,20 +30,20 @@ class _HomePageState extends State<HomePage> {
       FloatingActionButton(
         heroTag: UniqueKey(),
         backgroundColor: Colors.greenAccent,
-        onPressed: fechar,
-        child: Icon(Icons.add),
+        onPressed: close,
+        child: const Icon(Icons.add),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
-        onPressed: fechar,
-        child: Icon(Icons.camera),
+        onPressed: close,
+        child: const Icon(Icons.camera),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
         backgroundColor: Colors.orangeAccent,
-        onPressed: fechar,
-        child: Icon(Icons.card_giftcard),
+        onPressed: close,
+        child: const Icon(Icons.card_giftcard),
       ),
     ];
 
@@ -52,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key02.currentState?.close();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -60,7 +62,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key02.currentState?.close();
         },
-        child: Icon(Icons.camera),
+        child: const Icon(Icons.camera),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -68,7 +70,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key02.currentState?.close();
         },
-        child: Icon(Icons.card_giftcard),
+        child: const Icon(Icons.card_giftcard),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -76,7 +78,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key02.currentState?.close();
         },
-        child: Icon(Icons.accessibility_new),
+        child: const Icon(Icons.accessibility_new),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -84,7 +86,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key02.currentState?.close();
         },
-        child: Icon(Icons.camera),
+        child: const Icon(Icons.camera),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -92,7 +94,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key02.currentState?.close();
         },
-        child: Icon(Icons.camera),
+        child: const Icon(Icons.camera),
       ),
     ];
 
@@ -103,7 +105,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key03.currentState?.close();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -111,7 +113,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key03.currentState?.close();
         },
-        child: Icon(Icons.camera),
+        child: const Icon(Icons.camera),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -119,7 +121,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key03.currentState?.close();
         },
-        child: Icon(Icons.card_giftcard),
+        child: const Icon(Icons.card_giftcard),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -127,7 +129,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key03.currentState?.close();
         },
-        child: Icon(Icons.accessibility_new),
+        child: const Icon(Icons.accessibility_new),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -135,7 +137,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key03.currentState?.close();
         },
-        child: Icon(Icons.camera),
+        child: const Icon(Icons.camera),
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
@@ -143,7 +145,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           key03.currentState?.close();
         },
-        child: Icon(Icons.camera),
+        child: const Icon(Icons.camera),
       ),
     ];
     super.initState();
@@ -153,50 +155,46 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sample"),
+        title: const Text('Sample'),
         centerTitle: true,
       ),
-      body: Container(
-        child: Stack(
-          children: <Widget>[
-            Container(
-              child: CircleFloatingButton.semiCircle(
-                key: key02,
-                position: Position.right,
+      body: Stack(
+        children: <Widget>[
+          CircleFloatingButton.semiCircle(
+            key: key02,
+            position: Position.right,
+            useOpacity: true,
+            items: itemsToBody,
+            color: Colors.red,
+            icon: Icons.adb,
+            duration: const Duration(milliseconds: 1000),
+            curveAnim: Curves.elasticOut,
+          ),
+          Positioned(
+            bottom: 100,
+            right: 10,
+            child: SizedBox(
+              height: 300,
+              width: 300,
+              child: CircleFloatingButton.completeCircle(
+                key: key03,
                 useOpacity: true,
-                items: itemsToBody,
-                color: Colors.red,
+                items: itemsToBodyComplete,
+                color: Colors.blue,
                 icon: Icons.adb,
-                duration: Duration(milliseconds: 1000),
+                duration: const Duration(milliseconds: 1000),
                 curveAnim: Curves.elasticOut,
-              ),
-            ),
-            Positioned(
-              bottom: 100,
-              right: 10,
-              child: Container(
-                height: 300,
-                width: 300,
-                child: CircleFloatingButton.completeCircle(
-                  key: key03,
-                  useOpacity: true,
-                  items: itemsToBodyComplete,
-                  color: Colors.blue,
-                  icon: Icons.adb,
-                  duration: Duration(milliseconds: 1000),
-                  curveAnim: Curves.elasticOut,
-                  child: Container(
-                    color: Colors.red,
-                    child: CircleAvatar(
-                      child: Text("Casa"),
-                      maxRadius: 30,
-                    ),
+                child: Container(
+                  color: Colors.red,
+                  child: const CircleAvatar(
+                    maxRadius: 30,
+                    child: Text('Casa'),
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: CircleFloatingButton.floatingActionButton(
         useOpacity: true,
@@ -204,7 +202,7 @@ class _HomePageState extends State<HomePage> {
         items: itemsActionBar,
         color: Colors.redAccent,
         icon: Icons.ac_unit,
-        duration: Duration(milliseconds: 1000),
+        duration: const Duration(milliseconds: 1000),
         curveAnim: Curves.ease,
       ),
     );
