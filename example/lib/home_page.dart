@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:radial_button/widget/circle_floating_button.dart';
+import 'package:radial_button/widget/widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,9 +7,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> itemsActionBar;
-  List<Widget> itemsToBody;
-  List<Widget> itemsToBodyComplete;
+  late List<Widget> itemsActionBar;
+  late List<Widget> itemsToBody;
+  late List<Widget> itemsToBodyComplete;
 
   GlobalKey<CircleFloatingButtonState> key01 =
       GlobalKey<CircleFloatingButtonState>();
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
       GlobalKey<CircleFloatingButtonState>();
 
   fechar() {
-    key01.currentState.close();
+    key01.currentState!.close();
   }
 
   @override
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.greenAccent,
         onPressed: () {
-          key02.currentState.close();
+          key02.currentState?.close();
         },
         child: Icon(Icons.add),
       ),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
-          key02.currentState.close();
+          key02.currentState?.close();
         },
         child: Icon(Icons.camera),
       ),
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.orangeAccent,
         onPressed: () {
-          key02.currentState.close();
+          key02.currentState?.close();
         },
         child: Icon(Icons.card_giftcard),
       ),
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
-          key02.currentState.close();
+          key02.currentState?.close();
         },
         child: Icon(Icons.accessibility_new),
       ),
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.white70,
         onPressed: () {
-          key02.currentState.close();
+          key02.currentState?.close();
         },
         child: Icon(Icons.camera),
       ),
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.black,
         onPressed: () {
-          key02.currentState.close();
+          key02.currentState?.close();
         },
         child: Icon(Icons.camera),
       ),
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.redAccent,
         onPressed: () {
-          key03.currentState.close();
+          key03.currentState?.close();
         },
         child: Icon(Icons.add),
       ),
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
-          key03.currentState.close();
+          key03.currentState?.close();
         },
         child: Icon(Icons.camera),
       ),
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.blueAccent,
         onPressed: () {
-          key03.currentState.close();
+          key03.currentState?.close();
         },
         child: Icon(Icons.card_giftcard),
       ),
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.indigoAccent,
         onPressed: () {
-          key03.currentState.close();
+          key03.currentState?.close();
         },
         child: Icon(Icons.accessibility_new),
       ),
@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.cyanAccent,
         onPressed: () {
-          key03.currentState.close();
+          key03.currentState?.close();
         },
         child: Icon(Icons.camera),
       ),
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
         heroTag: UniqueKey(),
         backgroundColor: Colors.brown,
         onPressed: () {
-          key03.currentState.close();
+          key03.currentState?.close();
         },
         child: Icon(Icons.camera),
       ),
@@ -162,6 +162,8 @@ class _HomePageState extends State<HomePage> {
             Container(
               child: CircleFloatingButton.semiCircle(
                 key: key02,
+                position: Position.right,
+                useOpacity: true,
                 items: itemsToBody,
                 color: Colors.red,
                 icon: Icons.adb,
@@ -177,6 +179,7 @@ class _HomePageState extends State<HomePage> {
                 width: 300,
                 child: CircleFloatingButton.completeCircle(
                   key: key03,
+                  useOpacity: true,
                   items: itemsToBodyComplete,
                   color: Colors.blue,
                   icon: Icons.adb,
@@ -196,6 +199,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: CircleFloatingButton.floatingActionButton(
+        useOpacity: true,
         key: key01,
         items: itemsActionBar,
         color: Colors.redAccent,

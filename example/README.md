@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   fechar() {
     key01.currentState.close();
   }
-
   @override
   void initState() {
     itemsActionBar = [
@@ -45,7 +44,6 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.card_giftcard),
       ),
     ];
-
     itemsToBody = [
       FloatingActionButton(
         backgroundColor: Colors.greenAccent,
@@ -90,7 +88,6 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.camera),
       ),
     ];
-
     itemsToBodyComplete = [
       FloatingActionButton(
         backgroundColor: Colors.redAccent,
@@ -137,7 +134,6 @@ class _HomePageState extends State<HomePage> {
     ];
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,5 +184,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
 ```

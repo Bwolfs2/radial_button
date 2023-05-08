@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:radial_button/bloc/bloc_controller.dart';
 
-import 'package:radial_button/animation/circle_button_animation.dart';
+import '../animation/circle_button_animation.dart';
+import '../bloc/bloc_controller.dart';
 
 class CircleButton extends StatefulWidget {
   final double finalTop;
@@ -14,14 +14,14 @@ class CircleButton extends StatefulWidget {
   final bool opacity;
 
   CircleButton(
-      {Key key,
-      this.finalTop,
-      this.finalRight,
-      this.initState,
-      this.bloc,
+      {Key? key,
+      required this.finalTop,
+      required this.finalRight,
+      required this.initState,
+      required this.bloc,
       this.duration = const Duration(milliseconds: 300),
-      this.widget,
-      this.curve,
+      required this.widget,
+      required this.curve,
       this.opacity = true})
       : super(key: key);
 
@@ -41,7 +41,7 @@ class _CircleButtonState extends State<CircleButton>
   BlocController get bloc => widget.bloc;
 
   @override
-  Duration get duration => widget.duration ?? Duration(milliseconds: 300);
+  Duration get duration => widget.duration;
 
   @override
   Curve get curve => widget.curve;
@@ -55,12 +55,12 @@ class _CircleButtonState extends State<CircleButton>
         return Positioned(
           top: positionAnimation.value.dy,
           left: positionAnimation.value.dx,
-          child: widget.opacity == null || widget.opacity
+          child: widget.opacity == true
               ? Opacity(
                   opacity: controller.value,
                   child: child,
                 )
-              : child,
+              : child!,
         );
       },
     );
