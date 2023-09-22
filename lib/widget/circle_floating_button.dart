@@ -16,6 +16,7 @@ class CircleFloatingButton extends StatefulWidget {
   final Duration duration;
   final Color buttonColor;
   final IconData buttonIcon;
+  final Color iconColor;
   final Curve curve;
   final bool opacity;
   final Widget? child;
@@ -32,6 +33,7 @@ class CircleFloatingButton extends StatefulWidget {
     required this.type,
     required this.buttonColor,
     required this.buttonIcon,
+    required this.iconColor,
     required this.curve,
     required this.opacity,
     this.child,
@@ -42,6 +44,7 @@ class CircleFloatingButton extends StatefulWidget {
     double radius = 100,
     required Duration duration,
     required IconData icon,
+    required Color iconColor,
     required Color color,
     required Curve curveAnim,
     required bool useOpacity,
@@ -56,6 +59,7 @@ class CircleFloatingButton extends StatefulWidget {
       type: CircleType.quarterPart,
       duration: duration,
       buttonIcon: icon,
+      iconColor: iconColor,
       buttonColor: color,
       curve: curveAnim,
       opacity: useOpacity,
@@ -69,6 +73,7 @@ class CircleFloatingButton extends StatefulWidget {
     required Duration duration,
     required IconData icon,
     required Color color,
+    required Color iconColor,
     required Curve curveAnim,
     required bool useOpacity,
     Key? key,
@@ -81,6 +86,7 @@ class CircleFloatingButton extends StatefulWidget {
       type: CircleType.complete,
       duration: duration,
       buttonIcon: icon,
+      iconColor: iconColor,
       buttonColor: color,
       curve: curveAnim,
       opacity: useOpacity,
@@ -108,6 +114,7 @@ class CircleFloatingButton extends StatefulWidget {
       type: CircleType.semi,
       duration: duration,
       buttonIcon: icon,
+      iconColor: color,
       buttonColor: color,
       curve: curveAnim,
       opacity: useOpacity,
@@ -215,7 +222,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
                       heroTag: UniqueKey(),
                       backgroundColor: widget.buttonColor,
                       onPressed: _bloc.toggle,
-                      child: Icon(widget.buttonIcon),
+                      child: Icon(widget.buttonIcon, color: widget.iconColor),
                     ),
             ),
           ),
@@ -268,7 +275,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
                       heroTag: UniqueKey(),
                       backgroundColor: widget.buttonColor,
                       onPressed: _bloc.toggle,
-                      child: Icon(widget.buttonIcon),
+                      child: Icon(widget.buttonIcon, color: widget.iconColor),
                     ),
             ),
           ),
@@ -319,7 +326,7 @@ class CircleFloatingButtonState extends State<CircleFloatingButton> {
                     heroTag: UniqueKey(),
                     backgroundColor: widget.buttonColor,
                     onPressed: _bloc.toggle,
-                    child: Icon(widget.buttonIcon),
+                    child: Icon(widget.buttonIcon, color: widget.iconColor),
                   ),
           ),
         ),
